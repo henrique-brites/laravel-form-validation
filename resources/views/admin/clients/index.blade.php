@@ -1,27 +1,20 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Listagem de clientes</h1>
+@extends('layouts.layout')
+
+@section('content')
+    <h3>Listagem de clientes</h3>
     <br><br>
-    <table border="1">
+    <table class="table table-striped">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>CNPJ/CPF</th>
-                <th>Data Nasc.</th>
-                <th>E-mail</th>
-                <th>Telefone</th>
-                <th>Sexo</th>
-                <th>Ação</th>
-            </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CNPJ/CPF</th>
+            <th>Data Nasc.</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Sexo</th>
+            <th>Ação</th>
+        </tr>
         </thead>
         <tbody>
         @forelse($clients as $client)
@@ -47,5 +40,4 @@
         @endforelse
         </tbody>
     </table>
-</body>
-</html>
+@endsection
