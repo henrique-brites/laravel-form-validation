@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('document_number'); //modificar o tamanho do cfp/cnpj
             $table->string('email');
             $table->string('phone');
-            $table->boolean('dafaulter'); // inadimplente
+            $table->boolean('defaulter'); // inadimplente
             $table->date('date_birth');
             $table->char('sex', 10);
             $table->enum('marital_status', array_keys(\App\Client::MARITAL_STATUS));
