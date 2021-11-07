@@ -21,3 +21,13 @@ Route::group([
  ], function (){
     Route::resource('clients', 'ClientsController');
 });
+
+
+Route::name('meu-nome')
+    ->get('/rota-nomeada/qualquer-coisa', function () {
+        echo "Hello World!!";
+    });
+
+Route::get('/rota-nomeada1/qualquer-coisa', function () {
+    echo "Hello World1!!";
+})->name('meu-nome1');
