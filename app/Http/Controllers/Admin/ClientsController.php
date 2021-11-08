@@ -26,7 +26,7 @@ class ClientsController extends Controller //Controller resource
      */
     public function create(Request $request)
     {
-        return view('admin.clients.create');
+        return view('admin.clients.create', ['client' => new Client()]);
     }
 
     /**
