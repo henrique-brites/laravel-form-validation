@@ -10,7 +10,8 @@
         </ul>
     @endif
     <form method="post" action="{{ route('clients.update', ['client' => $client->id]) }}">
-        {{csrf_field()}}
+        {{ csrf_field() }}
+        {{ method_field('PUT') }}
         <div class="form-group">
             <label for="name">Nome</label>
             <input class="form-control" id="name" name="name" value="{{$client->name}}">
@@ -36,15 +37,15 @@
             <label for="marital_status">Estado Civil</label>
             <select class="form-control" name="marital_status" id="marital_status" value="{{$client->marital_status}}">
                 <option value="">Selecione o estado civil</option>
-                <option value="1">Solteiro</option>
-                <option value="2">Casado</option>
-                <option value="3">Divorciado</option>
+                <option value="1" {{$client->marital_status == 1 ? 'selected="selected"' : ''}}>Solteiro</option>
+                <option value="2" {{$client->marital_status == 2 ? 'selected="selected"' : ''}}>Casado</option>
+                <option value="3" {{$client->marital_status == 3 ? 'selected="selected"' : ''}}>Divorciado</option>
             </select>
         </div>
 
         <div class="form-group">
             <label for="date_birth">Data Nasc.</label>
-            <input class="form-control" id="date_birth" name="date_birth" type="date" value="{{$client->date}}">
+            <input class="form-control" id="date_birth" name="date_birth" type="date" value="{{$client->date_birth}}">
         </div>
 
         <div class="radio">
@@ -69,6 +70,6 @@
                 <input id="defaulter" name="defaulter" type="checkbox" {{$client->defaulter ? 'checked="checked"' : ''}}> Inadimplente?
             </label>
         </div>
-        <button type="submit" class="btn btn-default">Criar</button>
+        <button type="submit" class="btn btn-default">Enviar</button>
     </form>
 @endsection
