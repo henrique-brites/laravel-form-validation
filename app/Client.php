@@ -26,6 +26,9 @@ class Client extends Model
         'physical_disability'
     ];
 
+    public static function getClientType($type) {
+        return $type == Client::TYPE_LEGAL ? $type : Client::TYPE_INDIVIDUAL;
+    }
 }
 
 //$table->increments('id');
