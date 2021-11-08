@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
+    CONST TYPE_INDIVIDUAL = 'individual';
+    CONST TYPE_LEGAL = 'legal';
     const MARITAL_STATUS = [
         1 => 'Solteiro',
         2 => 'Casado',
